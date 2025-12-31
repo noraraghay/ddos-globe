@@ -1,0 +1,42 @@
+PAISES = {
+    "CN": {"nombre": "China", "lat": 35.86, "lon": 104.19},
+    "US": {"nombre": "Estados Unidos", "lat": 37.09, "lon": -95.71},
+    "RU": {"nombre": "Rusia", "lat": 61.52, "lon": 105.32},
+    "DE": {"nombre": "Alemania", "lat": 51.17, "lon": 10.45},
+    "BR": {"nombre": "Brasil", "lat": -14.24, "lon": -51.93},
+    "IN": {"nombre": "India", "lat": 20.59, "lon": 78.96},
+    "GB": {"nombre": "Reino Unido", "lat": 55.38, "lon": -3.44},
+    "FR": {"nombre": "Francia", "lat": 46.60, "lon": 1.89},
+    "JP": {"nombre": "Japón", "lat": 36.20, "lon": 138.25},
+    "KR": {"nombre": "Corea del Sur", "lat": 35.91, "lon": 127.77},
+    "IT": {"nombre": "Italia", "lat": 41.87, "lon": 12.57},
+    "ES": {"nombre": "España", "lat": 40.42, "lon": -3.70},
+    "NL": {"nombre": "Países Bajos", "lat": 52.13, "lon": 5.29},
+    "AU": {"nombre": "Australia", "lat": -25.27, "lon": 133.78},
+    "CA": {"nombre": "Canadá", "lat": 56.13, "lon": -106.35},
+    "MX": {"nombre": "México", "lat": 23.63, "lon": -102.55},
+    "AR": {"nombre": "Argentina", "lat": -38.42, "lon": -63.62},
+    "ZA": {"nombre": "Sudáfrica", "lat": -30.56, "lon": 22.94},
+    "SE": {"nombre": "Suecia", "lat": 60.13, "lon": 18.64},
+    "NO": {"nombre": "Noruega", "lat": 60.47, "lon": 8.47},
+    "FI": {"nombre": "Finlandia", "lat": 61.92, "lon": 25.75},
+    "PL": {"nombre": "Polonia", "lat": 51.92, "lon": 19.15},
+    "UA": {"nombre": "Ucrania", "lat": 48.38, "lon": 31.17},
+    "TR": {"nombre": "Turquía", "lat": 38.96, "lon": 35.24},
+    "IR": {"nombre": "Irán", "lat": 32.43, "lon": 53.69},
+    "SA": {"nombre": "Arabia Saudí", "lat": 23.89, "lon": 45.08},
+    "EG": {"nombre": "Egipto", "lat": 26.82, "lon": 30.80},
+    "NG": {"nombre": "Nigeria", "lat": 9.08, "lon": 8.68},
+    "ID": {"nombre": "Indonesia", "lat": -0.79, "lon": 113.92},
+    "VN": {"nombre": "Vietnam", "lat": 14.06, "lon": 108.28},
+    "TH": {"nombre": "Tailandia", "lat": 15.87, "lon": 100.99},
+    "PH": {"nombre": "Filipinas", "lat": 12.88, "lon": 121.77},
+    "SG": {"nombre": "Singapur", "lat": 1.35, "lon": 103.82},
+    "HK": {"nombre": "Hong Kong", "lat": 22.32, "lon": 114.17},
+    "TW": {"nombre": "Taiwán", "lat": 23.70, "lon": 120.96},
+}
+
+def obtener_coordenadas(codigo_pais: str):
+    """Devuelve lat/lon de un país, o 0,0 si no existe"""
+    pais = PAISES.get(codigo_pais, {"lat": 0, "lon": 0})
+    return pais["lat"], pais["lon"]
