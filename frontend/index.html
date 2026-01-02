@@ -262,6 +262,12 @@
         .legend-dot.high { background: #ff6b00; box-shadow: 0 0 10px #ff6b00; }
         .legend-dot.medium { background: #00d4ff; box-shadow: 0 0 10px #00d4ff; }
         .legend-dot.low { background: #00ff88; box-shadow: 0 0 10px #00ff88; }
+
+        .threat-ml {
+            font-size: 10px;
+            color: #00ff88;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -443,6 +449,7 @@
                         <span>${amenaza.pais}</span> → <span>ES</span>
                     </div>
                     <div class="threat-ip">${amenaza.ip}</div>
+                    <div class="threat-ml">🤖 ML: ${amenaza.ml_severidad} (${amenaza.ml_confianza}%)</div>
                 </div>
             `;
 

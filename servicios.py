@@ -2,6 +2,7 @@ import os
 import httpx
 from dotenv import load_dotenv
 from coordenadas import obtener_coordenadas
+from ml_modelo import predecir as predecir_ml
 
 load_dotenv()
 
@@ -20,13 +21,21 @@ def transformar_a_amenaza(datos: dict):
     
     lat, lon = obtener_coordenadas(info["countryCode"])
     
+    # Usar nuestro modelo ML para predecir
+    prediccion = predecir_ml(info)
+    
     return {
         "ip": info["ipAddress"],
         "pais": info["countryCode"],
         "tipo": tipo,
         "severidad": info["abuseConfidenceScore"],
         "latitud": lat,
-        "longitud": lon
+        "longitud": lon,
+        #campos del ML
+        "ml_score": prediccion["score_riesgo"],
+        "ml_severidad": prediccion["severidad_predicha"],
+        "ml_confianza": prediccion["confianza"],
+        "ml_factores": prediccion["factores"]
     }
 
 
