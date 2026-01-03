@@ -392,8 +392,8 @@
         let stats = { total: 0, critical: 0, high: 0, countries: new Set() };
 
         // WebSocket
-        const ws = new WebSocket('ws://127.0.0.1:8000/ws');
-
+        const wsHost = window.location.hostname === 'localhost' ? 'localhost' : window.location.hostname;
+        const ws = new WebSocket(`ws://${wsHost}:8000/ws`);
         ws.onopen = function() {
             console.log('✅ Conectado');
         };
